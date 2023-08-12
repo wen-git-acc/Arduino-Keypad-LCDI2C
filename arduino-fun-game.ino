@@ -21,7 +21,7 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 
 //Variable Initialization
-String setUpMessageLCD = "Hi, I am alive........";
+String setUpMessageLCD = "Hi, I am alive.";
 String inputWord = "";
 bool isKeyAction;
 bool isScrollingAction;
@@ -186,16 +186,9 @@ void displayDecodedText(String& text, int displayStartRow){
 
 //TODO - Optional
 String deleteCharacter(String& text){
-  //Do you reset everytime you key in number wrongly?
+  //Do you reset everytime you key in wrongly?
   //Build a function to delete single character then :)
-  String shortenText = "";
-  int textLength = text.length();
-  if (textLength > 0){
-    shortenText = text.substring(0,textLength-1);
-  } else {
-    shortenText = text;
-  }
-  return shortenText;
+  return text;
 }
 
 //TODO - Main Function
@@ -210,55 +203,7 @@ String numberToTextDecoder(String& text){
 
   //Hint 2:
   //Serial.print() or Serial.println() to print at Serial Monitor Console.
-  
 
-  int index = 0; //index for numberArray
-  int startingPosition = 0;
-  int numArrIndex = 0;
-  String convertedResult = "";
-  String subString = "";
-  int stringToInt;
-  char characterValue = ' ';
-  int subStringLength;
-  int binaryNumberLength = 8;
-
-  for (int i = 0; i < text.length(); i++){
-    
-    if(text.charAt(i) == ' '){
-      subString = text.substring(startingPosition, i);
-      subStringLength = subString.length();
-      characterValue = subStringLength == binaryNumberLength ? binaryToChar(subString) : decimalToChar(subString);
-      convertedResult += characterValue;
-      startingPosition = i + 1;
-      numArrIndex++;
-    }
-    if(i == text.length() - 1){
-      subString = text.substring(startingPosition); //incase no space, means "101011"
-      subStringLength = subString.length();
-      characterValue = subStringLength == binaryNumberLength ? binaryToChar(subString) : decimalToChar(subString);
-      convertedResult += characterValue;
-      numArrIndex++;
-    }
-  }
-  return convertedResult;
+  return "You did it";
 }
 
-//Utility
-char binaryToChar(const String& binaryString) {
-  int charValue = 0;
-  int base = 1;
-  for (int i = binaryString.length() - 1; i >= 0; i--) {
-    if (binaryString[i] == '1') {
-      charValue += base;
-    }
-    base *= 2;
-  }
-  return static_cast<char>(charValue);
-}
-
-//Utility
-char decimalToChar(const String& decimalString){
-  int stringToInt;
-  stringToInt = decimalString.toInt();
-  return static_cast<char>(stringToInt);
-}
