@@ -204,6 +204,6 @@ String numberToTextDecoder(String& text){
   //Hint 2:
   //Serial.print() or Serial.println() to print at Serial Monitor Console.
 
-  return "You did it";
+  return "You did it.";
 }
 
