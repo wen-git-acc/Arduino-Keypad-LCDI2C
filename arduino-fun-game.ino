@@ -187,7 +187,9 @@ void displayDecodedText(String& text, int displayStartRow){
 //TODO - Main Function
 String numberToTextDecoder(String& text){
   //Please include your numeric to text decoder logic here.
-  //Input data type example: "23 32 102 203" #Each number represent 1 char, which mean 4 characters in total with the given example.
+  
+  //Refer below as "DUMMY" EXAMPLE:
+  //Input data type example: "11112 323231 112312 2213123" #Each number represent 1 char, which mean 4 characters in total with the given example.
   //Output data type example: "High" #As mentioned, each number represent 1 char, hence, 4 numbers converted into 4 letter of word.
 
   //Hint 1: 
