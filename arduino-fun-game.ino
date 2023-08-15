@@ -89,14 +89,15 @@ String actionForKey(String& text, char key, int& displayStartRow, bool& isScroll
       isDecoded = false;
       break;
     case '*':
-      //Shall be deleted for their creativity.
+      //Please insert your logic into deleteCharacter function
       text = deleteCharacter(text);
       break;
     case '#':
       displayStartRow = 0;
       isScrollingAction = false;
       if (!isDecoded && text.length() != 0) {
-          text = numberToTextDecoder(text);
+        //Please insert your logic into numberToTextDecoder function
+        text = numberToTextDecoder(text);
       }
       isDecoded = true;
       break;
@@ -183,14 +184,6 @@ void displayDecodedText(String& text, int displayStartRow){
   }
 }
 
-
-//TODO - Optional
-String deleteCharacter(String& text){
-  //Do you reset everytime you key in wrongly?
-  //Build a function to delete single character then :)
-  return text;
-}
-
 //TODO - Main Function
 String numberToTextDecoder(String& text){
   //Please include your numeric to text decoder logic here.
@@ -198,12 +191,18 @@ String numberToTextDecoder(String& text){
   //Output data type example: "High" #As mentioned, each number represent 1 char, hence, 4 numbers converted into 4 letter of word.
 
   //Hint 1: 
-  //char y = static_cast<char>(parameter1) 
-  //This is a function to convert decimal number into single character. Input parameter data type: integer, Output parameter data type: char 
+  //useful function = static_cast --> A Cast operator is a unary operator which forces one data type to be converted into another data type.
+  //https://www.geeksforgeeks.org/static_cast-in-cpp/
 
   //Hint 2:
   //Serial.print() or Serial.println() to print at Serial Monitor Console.
 
-  return "You did it.";
+  return "Mission Failed! Insert Your Logic";
 }
 
+//TODO - Optional
+String deleteCharacter(String& text){
+  //Do you reset everytime you key in wrongly?
+  //Build a function to delete single character then :)
+  return text;
+}
